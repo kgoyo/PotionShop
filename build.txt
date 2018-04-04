@@ -1,0 +1,3 @@
+author = kgoyo
+version = 0.1
+displayName = Potion Shop
