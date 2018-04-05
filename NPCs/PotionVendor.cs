@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 
 namespace PotionShop.NPCs
 {
+    [AutoloadHead]
     public class PotionVendor : ModNPC
     {
         public override bool Autoload(ref string name)
