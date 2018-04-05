@@ -60,9 +60,9 @@ namespace PotionShop.NPCs
             //Can spawn if any player has a swiftness potion
             foreach (Player player in Main.player)
             {
-                for (int i=0; i < player.inventory.Length; i++)
+                foreach (Item item in player.inventory)
                 {
-                    if (i == ItemID.SwiftnessPotion)
+                    if (item.type == ItemID.SwiftnessPotion)
                     {
                         return true;
                     }
