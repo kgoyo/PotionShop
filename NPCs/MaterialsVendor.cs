@@ -69,18 +69,8 @@ namespace PotionShop.NPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
-            //Can spawn if any player has a swiftness potion
-            foreach (Player player in Main.player)
-            {
-                foreach (Item item in player.inventory)
-                {
-                    if (item.type == ItemID.SwiftnessPotion)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
+            //Spawn if Potion Vendor has spawned
+            return NPC.AnyNPCs(mod.NPCType("Potion Vendor"));
         }
 
         public override string TownNPCName()
@@ -192,6 +182,9 @@ namespace PotionShop.NPCs
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.GoldenKey);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.LockBox);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 17);
                         nextSlot++;
                     }
                     
