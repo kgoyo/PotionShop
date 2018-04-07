@@ -17,6 +17,7 @@ namespace PotionShop.NPCs
         private const int BARSANDGEMS = 1;
      
         private static int shopIndex = 0;
+        private const string CALAMITYMOD = "CalamityMod";
 
         public override bool Autoload(ref string name)
         {
@@ -380,6 +381,16 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.ChlorophyteBar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,95);
                         nextSlot++;
+                    }
+
+                    if (ModLoader.GetLoadedMods().Contains(CALAMITYMOD))
+                    {
+                        if (CalamityMod.CalamityWorld.downedProvidence)
+                        {
+                            shop.item[nextSlot].SetDefaults(ItemID.LunarBar);
+                            shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 95);
+                            nextSlot++;
+                        }
                     }
 
                     break;
