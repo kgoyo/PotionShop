@@ -160,7 +160,7 @@ namespace PotionShop.NPCs
                     if (NPC.downedBoss1)
                     { 
                         shop.item[nextSlot].SetDefaults(ItemID.FallenStar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                     }
 
@@ -171,10 +171,7 @@ namespace PotionShop.NPCs
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.DemoniteBar);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.Amber);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.FossilOre); 
-                        nextSlot++;
+               
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         nextSlot++;
                     }
@@ -195,32 +192,50 @@ namespace PotionShop.NPCs
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.Bone);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.CopperBar);
+                        shop.item[nextSlot].SetDefaults(ItemID.GoldenKey);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.TinBar);
+                    }
+
+
+                    
+                    if (Main.hardMode)
+                    {
+                        
+                    }
+                    
+                    //Destroyer
+                    if (NPC.downedMechBoss1)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofMight);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.IronBar);
+                    }
+
+                    //Twins
+                    if (NPC.downedMechBoss2)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofSight);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.LeadBar);
+                    }
+
+                    //Skeltron Prime
+                    if (NPC.downedMechBoss3)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofFright);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SilverBar);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.TungstenBar);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.GoldBar);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.PlatinumBar);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.MeteoriteBar);
-                        nextSlot++;
+                    }
+
+                    if (NPC.downedMechBossAny)
+                    {
                         
                     }
 
-                    //hardmode
-                    if (Main.hardMode)
+                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedBoss3)
                     {
-                       
+                        shop.item[nextSlot].SetDefaults(ItemID.HallowedBar);
+                        nextSlot++;
                     }
+
                     break;
 
                 case BARSANDGEMS:
@@ -252,7 +267,24 @@ namespace PotionShop.NPCs
                     //post skeletron, dungeon items
                     if (NPC.downedBoss3)
                     {
-                       
+                        shop.item[nextSlot].SetDefaults(ItemID.Diamond);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Ruby);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Emerald);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Sapphire);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Topaz);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Amethyst);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Amber);
+                        nextSlot++;
+
+                        shop.item[nextSlot].SetDefaults(ItemID.FossilOre);
+                        nextSlot++;
+
                         shop.item[nextSlot].SetDefaults(ItemID.CopperBar);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TinBar);
@@ -271,13 +303,13 @@ namespace PotionShop.NPCs
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.MeteoriteBar);
                         nextSlot++;
-
                     }
 
                     //hardmode
                     if (Main.hardMode)
                     {
-
+                        shop.item[nextSlot].SetDefaults(ItemID.HellstoneBar);
+                        nextSlot++;
                     }
                     break;
                     break;
