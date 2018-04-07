@@ -176,18 +176,13 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         nextSlot++;
                     }
-                    /*
-                    //post queen bee, jungle items
+                  
                     if (NPC.downedQueenBee)
                     {
-
-                        shop.item[nextSlot].SetDefaults(ItemID.Stinger);
+                        shop.item[nextSlot].SetDefaults(ItemID.BeeWax);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0,0,10);
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.Vine);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.JungleSpores);
-                        nextSlot++;
-                    }*/
+                    }
 
                     //post skeletron, dungeon items
                     if (NPC.downedBoss3)
