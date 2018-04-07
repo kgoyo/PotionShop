@@ -28,11 +28,11 @@ namespace PotionShop.NPCs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Potion Vendor");
-            Main.npcFrameCount[npc.type] = 25;
-            NPCID.Sets.ExtraFramesCount[npc.type] = 9;
-            NPCID.Sets.AttackFrameCount[npc.type] = 4;
+            Main.npcFrameCount[npc.type] = 26;
+            NPCID.Sets.ExtraFramesCount[npc.type] = 10;
+            NPCID.Sets.AttackFrameCount[npc.type] = 5;
             NPCID.Sets.DangerDetectRange[npc.type] = 700;
-            NPCID.Sets.AttackType[npc.type] = 0;
+            NPCID.Sets.AttackType[npc.type] = 1;
             NPCID.Sets.AttackTime[npc.type] = 90;
             NPCID.Sets.AttackAverageChance[npc.type] = 30;
             NPCID.Sets.HatOffsetY[npc.type] = 4;
@@ -218,7 +218,7 @@ namespace PotionShop.NPCs
                 nextSlot++;
             }
         }
-
+        
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
             damage = 40;
@@ -233,7 +233,7 @@ namespace PotionShop.NPCs
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
         {
-            projType = ProjectileID.Bananarang;
+            projType = ProjectileID.WoodenArrowFriendly;
             attackDelay = 1;
         }
 
@@ -242,6 +242,14 @@ namespace PotionShop.NPCs
             multiplier = 12f;
             randomOffset = 2f;
         }
+
+        public override void DrawTownAttackGun(ref float scale, ref int item, ref int closeness)
+        {
+            scale = 1f;
+            item = ItemID.WoodenBow;
+            closeness = 20;
+        }
+        
 
     }
 }
