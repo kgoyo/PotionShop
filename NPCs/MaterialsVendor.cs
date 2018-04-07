@@ -15,7 +15,7 @@ namespace PotionShop.NPCs
         private List<int> VendorShop = new List<int>();
         private const int MATERIALS = 0;
         private const int BARSANDGEMS = 1;
-     
+
         private static int shopIndex = 0;
         private const string CALAMITYMOD = "CalamityMod";
 
@@ -105,14 +105,14 @@ namespace PotionShop.NPCs
                     button1 = "...";
                     break;
             }
-            
+
             button2 = "Next shop";
         }
 
         private void NextShop()
         {
             shopIndex++;
-            if (shopIndex==VendorShop.Count)
+            if (shopIndex == VendorShop.Count)
             {
                 shopIndex = 0;
             }
@@ -131,7 +131,7 @@ namespace PotionShop.NPCs
         }
 
         public override void SetupShop(Chest shop, ref int nextSlot)
-        //shop has 40 slots
+            //shop has 40 slots
         {
             switch (VendorShop[shopIndex])
             {
@@ -155,7 +155,7 @@ namespace PotionShop.NPCs
                     nextSlot++;
                     //post EoC
                     if (NPC.downedBoss1)
-                    { 
+                    {
                         shop.item[nextSlot].SetDefaults(ItemID.FallenStar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
@@ -167,11 +167,11 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         nextSlot++;
                     }
-                  
+
                     if (NPC.downedQueenBee)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.BeeWax);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0,0,10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                         nextSlot++;
                     }
 
@@ -187,10 +187,10 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 17);
                         nextSlot++;
                     }
-                    
+
                     if (Main.hardMode)
                     {
-                        
+
                     }
 
                     if (NPC.downedMechBossAny)
@@ -207,7 +207,7 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.UnicornHorn);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.CrystalShard);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,75);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 75);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.SoulofNight);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
@@ -217,6 +217,7 @@ namespace PotionShop.NPCs
                         nextSlot++;
 
                     }
+
                     //Destroyer
                     if (NPC.downedMechBoss1)
                     {
@@ -276,14 +277,14 @@ namespace PotionShop.NPCs
 
                         nextSlot++;
                     }
-                    
+
                     if (NPC.downedTowerVortex)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentVortex);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;
                     }
-                    
+
                     break;
 
                 case BARSANDGEMS:
@@ -291,12 +292,13 @@ namespace PotionShop.NPCs
                     if (NPC.downedBoss2)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.CrimtaneBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,42);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 42);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.DemoniteBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,36);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 36);
                         nextSlot++;
                     }
+
                     //post skeletron, dungeon items
                     if (NPC.downedBoss3)
                     {
@@ -326,7 +328,7 @@ namespace PotionShop.NPCs
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.CopperBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 2,50);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 2, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TinBar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 3);
@@ -338,7 +340,7 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 5);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.SilverBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 7,50);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 7, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TungstenBar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
@@ -347,7 +349,7 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 13);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.PlatinumBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 18,50);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 18, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.MeteoriteBar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 25);
@@ -365,20 +367,20 @@ namespace PotionShop.NPCs
                     if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.HallowedBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,70);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 70);
                         nextSlot++;
                     }
 
                     if (NPC.downedPlantBoss)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.ChlorophyteBar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,95);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 95);
                         nextSlot++;
                     }
 
                     if (ModLoader.GetLoadedMods().Contains(CALAMITYMOD))
                     {
-                        if (CalamityMod.CalamityWorld.downedProvidence)
+                        if (CalamityModDownedProvidence)
                         {
                             shop.item[nextSlot].SetDefaults(ItemID.LunarBar);
                             shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 95);
@@ -392,7 +394,12 @@ namespace PotionShop.NPCs
                     break;
             }
         }
-        
+
+        public bool CalamityModDownedProvidence
+        {
+            get { return CalamityMod.CalamityWorld.downedProvidence; }
+        }
+
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
             damage = 10;
