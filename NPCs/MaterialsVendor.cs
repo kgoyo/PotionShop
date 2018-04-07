@@ -171,7 +171,6 @@ namespace PotionShop.NPCs
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.DemoniteBar);
                         nextSlot++;
-               
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         nextSlot++;
                     }
@@ -196,8 +195,6 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                     }
-
-
                     
                     if (Main.hardMode)
                     {
@@ -227,15 +224,63 @@ namespace PotionShop.NPCs
 
                     if (NPC.downedMechBossAny)
                     {
-                        
+                        shop.item[nextSlot].SetDefaults(ItemID.Ichor);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.CursedFlame);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.PixieDust);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.UnicornHorn);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.CrystalShard);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofNight);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofLight);
+                        nextSlot++;
+
                     }
 
-                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedBoss3)
+                    if (NPC.downedGolemBoss)
                     {
-                        shop.item[nextSlot].SetDefaults(ItemID.HallowedBar);
+                        shop.item[nextSlot].SetDefaults(ItemID.BeetleHusk);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.LifeFruit);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Ectoplasm);
                         nextSlot++;
                     }
 
+                    if (NPC.downedTowerNebula)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofLight);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedTowerSolar)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FragmentSolar);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedTowerStardust)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FragmentStardust);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedTowerNebula)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FragmentNebula);
+                        nextSlot++;
+                    }
+                    
+                    if (NPC.downedTowerVortex)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FragmentVortex);
+                        nextSlot++;
+                    }
+                    
                     break;
 
                 case BARSANDGEMS:
@@ -311,7 +356,19 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.HellstoneBar);
                         nextSlot++;
                     }
-                    break;
+
+                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedBoss3)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.HallowedBar);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedPlantBoss)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.ChlorophyteBar);
+                        nextSlot++;
+                    }
+
                     break;
                 default:
                     //no default shop
