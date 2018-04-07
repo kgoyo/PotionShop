@@ -89,8 +89,7 @@ namespace PotionShop.NPCs
 
         public override string GetChat()
         {
-            return "" + shopIndex;
-            /*switch (Main.rand.Next(3))
+            switch (Main.rand.Next(3))
             {
                 case 0:
                     return "Yo";
@@ -98,7 +97,7 @@ namespace PotionShop.NPCs
                     return "sup";
                 default:
                     return "Buy ma shit bro";
-            }*/
+            }
         }
 
         public override void SetChatButtons(ref string button1, ref string button2)
@@ -146,6 +145,8 @@ namespace PotionShop.NPCs
             switch (VendorShop[shopIndex])
             {
                 case MATERIALS:
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("HomeAltar"));
+                    nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Gel);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Wood);
