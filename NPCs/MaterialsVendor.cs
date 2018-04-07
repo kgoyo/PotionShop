@@ -148,14 +148,19 @@ namespace PotionShop.NPCs
                     shop.item[nextSlot].SetDefaults(mod.ItemType("HomeAltar"));
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Gel);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 0, 50);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Wood);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 0, 10);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Vertebrae);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 1);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.RottenChunk);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 1);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Book);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 2);
                     nextSlot++;
                     //post EoC
                     if (NPC.downedBoss1)
@@ -168,24 +173,21 @@ namespace PotionShop.NPCs
                     //post EoW BoC, crimson/ corruption items
                     if (NPC.downedBoss2)
                     {
-                        shop.item[nextSlot].SetDefaults(ItemID.CrimtaneBar);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.DemoniteBar);
-                        nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         nextSlot++;
                     }
-
+                    /*
                     //post queen bee, jungle items
                     if (NPC.downedQueenBee)
                     {
+
                         shop.item[nextSlot].SetDefaults(ItemID.Stinger);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Vine);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.JungleSpores);
                         nextSlot++;
-                    }
+                    }*/
 
                     //post skeletron, dungeon items
                     if (NPC.downedBoss3)
@@ -201,11 +203,36 @@ namespace PotionShop.NPCs
                     {
                         
                     }
-                    
+
+                    if (NPC.downedMechBossAny)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.Ichor);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 75);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.CursedFlame);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 75);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.PixieDust);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.UnicornHorn);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.CrystalShard);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,75);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofNight);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.SoulofLight);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
+                        nextSlot++;
+
+                    }
                     //Destroyer
                     if (NPC.downedMechBoss1)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.SoulofMight);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 3);
                         nextSlot++;
                     }
 
@@ -213,6 +240,7 @@ namespace PotionShop.NPCs
                     if (NPC.downedMechBoss2)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.SoulofSight);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 3);
                         nextSlot++;
                     }
 
@@ -220,134 +248,120 @@ namespace PotionShop.NPCs
                     if (NPC.downedMechBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.SoulofFright);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 3);
                         nextSlot++;
-                    }
-
-                    if (NPC.downedMechBossAny)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.Ichor);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.CursedFlame);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.PixieDust);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.UnicornHorn);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.CrystalShard);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SoulofNight);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SoulofLight);
-                        nextSlot++;
-
                     }
 
                     if (NPC.downedGolemBoss)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.BeetleHusk);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.LifeFruit);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 20);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Ectoplasm);
-                        nextSlot++;
-                    }
-
-                    if (NPC.downedTowerNebula)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.SoulofLight);
-                        nextSlot++;
-                    }
-
-                    if (NPC.downedTowerSolar)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.FragmentSolar);
-                        nextSlot++;
-                    }
-
-                    if (NPC.downedTowerStardust)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.FragmentStardust);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                     }
 
                     if (NPC.downedTowerNebula)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentNebula);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedTowerSolar)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FragmentSolar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
+
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedTowerStardust)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FragmentStardust);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
+
                         nextSlot++;
                     }
                     
                     if (NPC.downedTowerVortex)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentVortex);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;
                     }
                     
                     break;
 
                 case BARSANDGEMS:
-                    //post EoC
-                    if (NPC.downedBoss1)
-                    {
-                       
-                    }
-
                     //post EoW BoC, crimson/ corruption items
                     if (NPC.downedBoss2)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.CrimtaneBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,42);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.DemoniteBar);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.Amber);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.FossilOre);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,36);
                         nextSlot++;
                     }
-
-                    //post queen bee, jungle items
-                    if (NPC.downedQueenBee)
-                    {
-  
-                    }
-
                     //post skeletron, dungeon items
                     if (NPC.downedBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.Diamond);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 75);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Ruby);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 75);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Emerald);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 30);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Sapphire);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 30);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Topaz);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Amethyst);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Amber);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
-
                         shop.item[nextSlot].SetDefaults(ItemID.FossilOre);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.CopperBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 2,50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TinBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 3);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.IronBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 4, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.LeadBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 5);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.SilverBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 7,50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TungstenBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.GoldBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 13);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.PlatinumBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 18,50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.MeteoriteBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 25);
                         nextSlot++;
                     }
 
@@ -355,18 +369,21 @@ namespace PotionShop.NPCs
                     if (Main.hardMode)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.HellstoneBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 48);
                         nextSlot++;
                     }
 
                     if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.HallowedBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,70);
                         nextSlot++;
                     }
 
                     if (NPC.downedPlantBoss)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.ChlorophyteBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0,95);
                         nextSlot++;
                     }
 
