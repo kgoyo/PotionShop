@@ -93,6 +93,10 @@ namespace PotionShop.NPCs
 
         public override void SetChatButtons(ref string button1, ref string button2)
         {
+            if (shopIndex >= VendorShop.Count)
+            {
+                shopIndex = 0;
+            }
             switch (VendorShop[shopIndex])
             {
                 case MATERIALS:
