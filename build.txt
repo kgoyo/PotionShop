@@ -1,4 +1,9 @@
-author = kgoyo
-version = 0.1
+author = kgoyo, Rasy
+version = 1.0
 displayName = Potion Shop
 weakReferences = CalamityMod
+hideCode = false
+hideResources = false
+includeSource = true
+buildIgnore = *.csproj, *.user, *.sln, obj\*, bin\*, .vs\*, .git\*, .gitignore, .gitattributes, LICENCE
+includePDB = true

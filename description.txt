@@ -1,1 +1,9 @@
-Potion Shop is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Potion Shop is a mod that adds 3 new NPCs:
+Potion Vendor (spawns if a player has a swiftness potion), which sells a large variety of potions.
+Materials Vendor (spawns if there is a Potion Vendor), which sells different items you would normally grind for.
+Accessory Vendor (spawns afer Eye of Cthulhu has been defeated), which sells different accessories that can normally be difficult to get.
+ 
+This mods adds a single item the Home Altar which is a placeable Demon Altar purchasable from the Materials Vendor
+ 
+Mod support:
+Calamity Mod
