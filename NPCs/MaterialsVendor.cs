@@ -368,7 +368,7 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
-                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedBoss3)
+                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.HallowedBar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 70);
