@@ -386,7 +386,7 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
-                    if (NPC.downedPlantBoss)
+                    if (CalamityHelper.DownedCalamitas)
                     {
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("CalamitasBrew"));
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
@@ -437,7 +437,7 @@ namespace PotionShop.NPCs
             item = ItemID.WoodenBow;
             closeness = 20;
         }
-        
+
 
     }
 }

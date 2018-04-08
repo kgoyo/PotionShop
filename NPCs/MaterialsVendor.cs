@@ -380,7 +380,7 @@ namespace PotionShop.NPCs
 
                     if (ModLoader.GetLoadedMods().Contains(CALAMITYMOD))
                     {
-                        if (CalamityModDownedProvidence)
+                        if (CalamityHelper.DownedProvidence)
                         {
                             shop.item[nextSlot].SetDefaults(ItemID.LunarBar);
                             shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 95);
@@ -393,11 +393,6 @@ namespace PotionShop.NPCs
                     //no default shop
                     break;
             }
-        }
-
-        public bool CalamityModDownedProvidence
-        {
-            get { return CalamityMod.CalamityWorld.downedProvidence; }
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
