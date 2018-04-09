@@ -361,6 +361,17 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
+                    //other consumable potions
+                    shop.item[nextSlot].SetDefaults(ItemID.RecallPotion);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10, 0);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.WormholePotion);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10, 0);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.TeleportationPotion);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                    nextSlot++;
+
                     break;
                 case CALAMITYSHOP:
                     if (NPC.downedBoss3)
