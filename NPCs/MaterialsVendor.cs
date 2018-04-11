@@ -157,11 +157,15 @@ namespace PotionShop.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.Book);
                     shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 2);
                     nextSlot++;
+
                     //post EoC
                     if (NPC.downedBoss1)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.FallenStar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.GlowingMushroom);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 5);
                         nextSlot++;
                     }
 
