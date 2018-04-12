@@ -174,6 +174,9 @@ namespace PotionShop.NPCs
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         nextSlot++;
+						shop.item[nextSlot].SetDefaults(ItemID.Feather );
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 25);
+                        nextSlot++;
                     }
 
                     if (NPC.downedQueenBee)
