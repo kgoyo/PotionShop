@@ -15,7 +15,8 @@ namespace PotionShop.NPCs
         private List<int> potionVendorShop = new List<int>();
         private const int BUFFSHOP = 0;
         private const int CONSUMESHOP = 1;
-        private const int CALAMITYSHOP = 2;
+        private const int FLASKSHOP = 2;
+        private const int CALAMITYSHOP = 3;
 
         private static int shopIndex = 0;
 
@@ -67,6 +68,7 @@ namespace PotionShop.NPCs
             //create shop list
             potionVendorShop.Add(BUFFSHOP);
             potionVendorShop.Add(CONSUMESHOP);
+            potionVendorShop.Add(FLASKSHOP);
             if (ModLoader.GetLoadedMods().Contains(CALAMITYMOD))
             {
                 potionVendorShop.Add(CALAMITYSHOP);
@@ -167,90 +169,90 @@ namespace PotionShop.NPCs
                     nextSlot++;
 
                     shop.item[nextSlot].SetDefaults(ItemID.RegenerationPotion);
-                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.SwiftnessPotion);
-                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.IronskinPotion);
-                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                     nextSlot++;
 
                     //post EoC
                     if (NPC.downedBoss1)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.GillsPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.FlipperPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.WaterWalkingPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.BattlePotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.CalmingPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.BuilderPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.EndurancePotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.ArcheryPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.MagicPowerPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.ManaRegenerationPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.ThornsPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.InvisibilityPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.MiningPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.SpelunkerPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TrapsightPotion); //dangersense
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.HunterPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.ShinePotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.NightOwlPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.FeatherfallPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.GravitationPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.SonarPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.WarmthPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                     }
 
@@ -258,23 +260,23 @@ namespace PotionShop.NPCs
                     if (NPC.downedBoss2)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.CratePotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.HeartreachPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.InfernoPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.ObsidianSkinPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
 
                         shop.item[nextSlot].SetDefaults(ItemID.RagePotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.WrathPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                     }
 
@@ -282,13 +284,13 @@ namespace PotionShop.NPCs
                     if (NPC.downedQueenBee)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.AmmoReservationPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.FishingPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.SummoningPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                     }
 
@@ -296,7 +298,7 @@ namespace PotionShop.NPCs
                     if (NPC.downedBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.TitanPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                     }
 
@@ -304,7 +306,7 @@ namespace PotionShop.NPCs
                     if (Main.hardMode)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.LifeforcePotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;
                     }
                     break;
@@ -323,7 +325,7 @@ namespace PotionShop.NPCs
                     if (NPC.downedQueenBee)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.Honeyfin);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 25, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 25);
                         nextSlot++;
                     }
 
@@ -336,7 +338,7 @@ namespace PotionShop.NPCs
                     if (NPC.downedMoonlord)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.SuperHealingPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                     }
 
@@ -346,7 +348,7 @@ namespace PotionShop.NPCs
                     if (NPC.downedBoss1)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.ManaPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 3, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 3);
                         nextSlot++;
                     }
                     if (Main.hardMode)
@@ -357,46 +359,87 @@ namespace PotionShop.NPCs
                     if (NPC.downedMechBossAny)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.SuperManaPotion);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                         nextSlot++;
                     }
 
                     //other consumable potions
                     shop.item[nextSlot].SetDefaults(ItemID.RecallPotion);
-                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10, 0);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.WormholePotion);
-                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10, 0);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.TeleportationPotion);
-                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                     nextSlot++;
 
+                    break;
+                case FLASKSHOP:
+                    if (NPC.downedQueenBee)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofPoison);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofFire);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofParty);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                    }
+
+                    if (Main.hardMode)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofGold);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedMechBossAny)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofIchor);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofCursedFlames);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedPlantBoss)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofVenom);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.FlaskofNanites);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
+                        nextSlot++;
+                    }
                     break;
                 case CALAMITYSHOP:
                     if (NPC.downedBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("AnechoicCoating")); // 50s
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("CadencePotion"));
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 5, 0, 0);
-                        nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("PotionofOmniscience"));
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 3, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 3);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("YharimsStimulants"));
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 4, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 4);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("ZergPotion"));
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("ZenPotion"));
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1, 0, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 1);
                         nextSlot++;
                     }
 
                     if (Main.hardMode)
                     {
+                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("CadencePotion"));
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 5);
+                        nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("FabsolsVodka")); //1g
                         nextSlot++;
                     }
@@ -404,7 +447,7 @@ namespace PotionShop.NPCs
                     if (CalamityHelper.DownedCalamitas)
                     {
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("CalamitasBrew"));
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50, 0);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 50);
                         nextSlot++;
                     }
 
