@@ -125,6 +125,9 @@ namespace PotionShop.NPCs
                 case CONSUMESHOP:
                     button1 = "Buy Consumable potions";
                     break;
+                case FLASKSHOP:
+                    button1 = "Buy flasks";
+                    break;
                 case CALAMITYSHOP:
                     button1 = "Buy Calamity potions";
                     break;
@@ -454,6 +457,19 @@ namespace PotionShop.NPCs
                     if (NPC.downedGolemBoss)
                     {
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("TitanScalePotion")); //1g
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedMoonlord)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("SupremeHealingPotion"));
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        nextSlot++;
+                    }
+                    if (CalamityHelper.DownedProvidence)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod(CALAMITYMOD).ItemType("OmegaHealingPotion"));
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 20);
                         nextSlot++;
                     }
 

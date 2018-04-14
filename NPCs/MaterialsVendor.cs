@@ -266,31 +266,20 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
-                    if (NPC.downedTowerNebula)
+                    if (NPC.downedMoonlord)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentNebula);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;
-                    }
 
-                    if (NPC.downedTowerSolar)
-                    {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentSolar);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
-
                         nextSlot++;
-                    }
 
-                    if (NPC.downedTowerStardust)
-                    {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentStardust);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
-
                         nextSlot++;
-                    }
 
-                    if (NPC.downedTowerVortex)
-                    {
                         shop.item[nextSlot].SetDefaults(ItemID.FragmentVortex);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2);
                         nextSlot++;

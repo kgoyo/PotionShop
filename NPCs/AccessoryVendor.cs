@@ -157,6 +157,9 @@ namespace PotionShop.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.HermesBoots);
                     shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0,10);
                     nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.Flipper);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                    nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.WaterWalkingBoots);
                     shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0,20);
                     nextSlot++;
@@ -207,6 +210,12 @@ namespace PotionShop.NPCs
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.ShinyRedBalloon);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0,25);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.JellyfishNecklace);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 5);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.DivingHelmet);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
                         nextSlot++;
                     }
 
