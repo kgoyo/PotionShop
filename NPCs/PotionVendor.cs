@@ -95,7 +95,7 @@ namespace PotionShop.NPCs
             {
                 foreach (Item item in player.inventory)
                 {
-                    if (item.type == ItemID.SwiftnessPotion)
+                    if (item.type == ItemID.RegenerationPotion)
                     {
                         return true;
                     }
