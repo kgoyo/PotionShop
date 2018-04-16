@@ -284,6 +284,17 @@ namespace PotionShop.NPCs
 
                 case SHOP2:
 
+                    shop.item[nextSlot].SetDefaults(ItemID.PaintSprayer);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.BrickLayer);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.PortableCementMixer);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.ExtendoGrip);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.ActuationAccessory); //TODO might be wrong
+                    nextSlot++;
+
                     if (NPC.downedBoss3)
                     {
                         //PDA ingredients
