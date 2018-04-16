@@ -22,6 +22,8 @@ namespace PotionShop.NPCs
 
         private const string CALAMITYMOD = "CalamityMod";
 
+        private List<string> shopNames = new List<string>();
+
         public override bool Autoload(ref string name)
         {
             name = "Potion Vendor";
@@ -66,14 +68,23 @@ namespace PotionShop.NPCs
             animationType = NPCID.Guide;
 
             //create shop list
+
             potionVendorShop.Add(BUFFSHOP);
+            shopNames.Add("Buy vanilla buffs");
+
             potionVendorShop.Add(CONSUMESHOP);
+            shopNames.Add("Buy Consumable potions");
+
             potionVendorShop.Add(FLASKSHOP);
+            shopNames.Add("Buy flasks");
+
             if (ModLoader.GetLoadedMods().Contains(CALAMITYMOD))
             {
                 potionVendorShop.Add(CALAMITYSHOP);
+                shopNames.Add("Buy Calamity potions");
             }
             
+            ShopHelper.PadShopNames(shopNames);
 
         }
 
@@ -117,24 +128,7 @@ namespace PotionShop.NPCs
             {
                 shopIndex = 0;
             }
-            switch (potionVendorShop[shopIndex])
-            {
-                case BUFFSHOP:
-                    button1 = "Buy vanilla buffs";
-                    break;
-                case CONSUMESHOP:
-                    button1 = "Buy Consumable potions";
-                    break;
-                case FLASKSHOP:
-                    button1 = "Buy flasks";
-                    break;
-                case CALAMITYSHOP:
-                    button1 = "Buy Calamity potions";
-                    break;
-                default:
-                    break;
-            }
-            
+            button1 = shopNames[shopIndex];
             button2 = "Next shop";
         }
 

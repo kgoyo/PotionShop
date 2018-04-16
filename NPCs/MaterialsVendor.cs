@@ -19,6 +19,8 @@ namespace PotionShop.NPCs
         private static int shopIndex = 0;
         private const string CALAMITYMOD = "CalamityMod";
 
+        private List<string> shopNames = new List<string>();
+
         public override bool Autoload(ref string name)
         {
             name = "Materials Vendor";
@@ -64,7 +66,11 @@ namespace PotionShop.NPCs
 
             //create shop list
             VendorShop.Add(MATERIALS);
+            shopNames.Add("Buy Assorted Materials");
             VendorShop.Add(BARSANDGEMS);
+            shopNames.Add("Buy Bars and Gems");
+
+            ShopHelper.PadShopNames(shopNames);
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
@@ -97,19 +103,7 @@ namespace PotionShop.NPCs
             {
                 shopIndex = 0;
             }
-            switch (VendorShop[shopIndex])
-            {
-                case MATERIALS:
-                    button1 = "Buy Assorted Materials";
-                    break;
-                case BARSANDGEMS:
-                    button1 = "Buy Bars and Gems";
-                    break;
-                default:
-                    button1 = "...";
-                    break;
-            }
-
+            button1 = shopNames[shopIndex];
             button2 = "Next shop";
         }
 

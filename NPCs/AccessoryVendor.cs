@@ -18,6 +18,8 @@ namespace PotionShop.NPCs
 
         private static int shopIndex = 0;
 
+        private List<string> shopNames = new List<string>();
+
         public override bool Autoload(ref string name)
         {
             name = "Accessory Vendor";
@@ -63,7 +65,11 @@ namespace PotionShop.NPCs
 
             //create shop list
             VendorShop.Add(SHOP1);
+            shopNames.Add("1st Shop");
             VendorShop.Add(SHOP2);
+            shopNames.Add("2nd Shop");
+
+            ShopHelper.PadShopNames(shopNames);
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
@@ -96,19 +102,7 @@ namespace PotionShop.NPCs
             {
                 shopIndex = 0;
             }
-            switch (VendorShop[shopIndex])
-            {
-                case SHOP1:
-                    button1 = "1st Shop";
-                    break;
-                case SHOP2:
-                    button1 = "2nd Shop";
-                    break;
-                default:
-                    button1 = "...";
-                    break;
-            }
-
+            button1 = shopNames[shopIndex];
             button2 = "Next shop";
         }
 
