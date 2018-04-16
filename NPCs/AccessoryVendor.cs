@@ -339,35 +339,35 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
-                    if (NPC.downedGolemBoss)
+                    if (NPC.downedPlantBoss)
                     {
                         //Ankh charm ingredients
                         shop.item[nextSlot].SetDefaults(ItemID.ArmorPolish);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Vitamins);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Bezoar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.AdhesiveBandage);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.FastClock);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.TrifoldMap);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Megaphone);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Nazar);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ItemID.Blindfold);
-                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 15);
                         nextSlot++;
 
                     }

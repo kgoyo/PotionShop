@@ -372,15 +372,14 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
-                    if (ModLoader.GetLoadedMods().Contains(CALAMITYMOD))
+
+                    if (NPC.downedMoonlord)
                     {
-                        if (CalamityHelper.DownedProvidence)
-                        {
-                            shop.item[nextSlot].SetDefaults(ItemID.LunarBar);
-                            shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 2, 95);
-                            nextSlot++;
-                        }
+                        shop.item[nextSlot].SetDefaults(ItemID.LunarBar);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10);
+                        nextSlot++;
                     }
+
 
                     break;
                 default:
