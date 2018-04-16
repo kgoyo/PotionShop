@@ -15,6 +15,7 @@ namespace PotionShop.NPCs
         private List<int> VendorShop = new List<int>();
         private const int MATERIALS = 0;
         private const int BARSANDGEMS = 1;
+        private const int RAREITEMS = 2;
 
         private static int shopIndex = 0;
         private const string CALAMITYMOD = "CalamityMod";
@@ -69,7 +70,8 @@ namespace PotionShop.NPCs
             shopNames.Add("Buy Assorted Materials");
             VendorShop.Add(BARSANDGEMS);
             shopNames.Add("Buy Bars and Gems");
-
+            VendorShop.Add(RAREITEMS);
+            shopNames.Add("Buy Rare Items");
             ShopHelper.PadShopNames(shopNames);
         }
 
@@ -380,6 +382,38 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
+
+                    break;
+                case RAREITEMS:
+                    shop.item[nextSlot].SetDefaults(ItemID.SlimeStaff);
+                    shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 30);
+                    nextSlot++;
+
+                    if (NPC.downedMechBossAny)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.RodofDiscord);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(5);
+                        nextSlot++;
+                    }
+
+                    if (NPC.downedPlantBoss)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.JungleKey);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(2);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.CorruptionKey);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(2);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.CrimsonKey);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(2);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.HallowedKey);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(2);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.FrozenKey);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(2);
+                        nextSlot++;
+                    }
 
                     break;
                 default:
