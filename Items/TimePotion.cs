@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -30,7 +25,6 @@ namespace PotionShop.Items
             item.consumable = true;
             item.rare = 3;
             item.value = Item.buyPrice(gold: 1);
-            item.buffTime = 36000;
         }
 
         public override bool UseItem(Player player)
