@@ -4,27 +4,27 @@ using Terraria.ModLoader;
 
 namespace PotionShop.Items
 {
-    class TimePotion : ModItem
+    class CelestialStick : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Time Potion");
-            Tooltip.SetDefault("Makes it dawn/dusk, depending on the current time");
+            DisplayName.SetDefault("Celestial Stick");
+            Tooltip.SetDefault("Swinging the stick makes it either dawn/dusk, depending on the current time");
+            Item.staff[item.type] = true;
         }
 
         public override void SetDefaults()
         {
-            item.width = 18;
-            item.height = 24;
-            item.useStyle = ItemUseStyleID.EatingUsing;
+            item.width = 49;
+            item.height = 49;
+            item.useStyle = 25;
             item.useAnimation = 17;
             item.useTime = 17;
             item.useTurn = true;
-            item.UseSound = SoundID.Item3;
             item.maxStack = 30;
-            item.consumable = true;
+            item.consumable = false;
             item.rare = 3;
-            item.value = Item.buyPrice(gold: 1);
+            item.value = Item.buyPrice(gold: 30);
         }
 
         public override bool UseItem(Player player)
