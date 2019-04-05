@@ -281,8 +281,6 @@ namespace PotionShop.NPCs
                     {
                         shop.item[nextSlot].SetDefaults(mod.ItemType("HordePotion"));
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(mod.ItemType("TimePotion"));
-                        nextSlot++;
                     }
 
                     //post queen bee, jungle items
@@ -331,12 +329,6 @@ namespace PotionShop.NPCs
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.Honeyfin);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 25);
-                        nextSlot++;
-                    }
-					
-					if (NPC.downedBoss3)
-                    {
-                        shop.item[nextSlot].SetDefaults(mod.ItemType("TimePotion"));
                         nextSlot++;
                     }
 

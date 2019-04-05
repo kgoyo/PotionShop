@@ -398,6 +398,12 @@ namespace PotionShop.NPCs
                     shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 30);
                     nextSlot++;
 
+                    if (NPC.downedBoss3)
+                    {
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("Celestial Stick"));
+                        nextSlot++;
+                    }
+
                     if (NPC.downedMechBossAny)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.RodofDiscord);
