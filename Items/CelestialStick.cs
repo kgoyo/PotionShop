@@ -22,7 +22,7 @@ namespace PotionShop.Items
             item.useTime = 17;
             item.useTurn = true;
             item.UseSound = SoundID.Item8;
-            item.maxStack = 30;
+            item.maxStack = 1;
             item.consumable = false;
             item.rare = 3;
             item.value = Item.buyPrice(gold: 30);
