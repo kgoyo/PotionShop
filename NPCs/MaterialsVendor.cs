@@ -400,7 +400,7 @@ namespace PotionShop.NPCs
 
                     if (NPC.downedBoss3)
                     {
-                        shop.item[nextSlot].SetDefaults(mod.ItemType("Celestial Stick"));
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("CelestialStick"));
                         nextSlot++;
                     }
 
