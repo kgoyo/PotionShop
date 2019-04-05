@@ -277,6 +277,14 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
+                    if (NPC.downedBoss3)
+                    {
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("HordePotion"));
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("TimePotion"));
+                        nextSlot++;
+                    }
+
                     //post queen bee, jungle items
                     if (NPC.downedQueenBee)
                     {
