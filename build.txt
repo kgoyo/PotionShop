@@ -1,5 +1,5 @@
 author = kgoyo, Rasy
-version = 1.0
+version = 2.0
 displayName = Potion Shop
 weakReferences = CalamityMod
 hideCode = false
