@@ -28,6 +28,16 @@ namespace PotionShop.Items
             item.value = Item.buyPrice(gold: 30);
         }
 
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.CelestialShell);
+            recipe.AddIngredient(ItemID.Wood);
+            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+
         public override bool UseItem(Player player)
         {
             if (!Main.dayTime)
