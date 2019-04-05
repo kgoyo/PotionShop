@@ -180,6 +180,15 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.BeeWax);
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 0, 10);
                         nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Stinger);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(silver: 20);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.JungleSpores);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(silver: 20);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.Vine);
+                        shop.item[nextSlot].shopCustomPrice = Item.buyPrice(silver: 20);
+                        nextSlot++;
                     }
 
                     //post skeletron, dungeon items
