@@ -9,7 +9,7 @@ namespace PotionShop.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Celestial Stick");
-            Tooltip.SetDefault("Swinging the stick makes it either dawn/dusk, depending on the current time");
+            Tooltip.SetDefault("Swinging this stick changes night to day, or day to night");
             Item.staff[item.type] = true;
         }
 
@@ -17,10 +17,11 @@ namespace PotionShop.Items
         {
             item.width = 49;
             item.height = 49;
-            item.useStyle = 25;
+            item.useStyle = 1;
             item.useAnimation = 17;
             item.useTime = 17;
             item.useTurn = true;
+            item.UseSound = SoundID.Item8;
             item.maxStack = 30;
             item.consumable = false;
             item.rare = 3;
