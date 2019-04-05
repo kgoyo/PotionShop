@@ -3,7 +3,10 @@ Potion Vendor (spawns if a player has a regeneration potion), which sells a larg
 Materials Vendor (spawns if there is a Potion Vendor), which sells different items you would normally grind for.
 Accessory Vendor (spawns afer Eye of Cthulhu has been defeated), which sells different accessories that can normally be difficult to get.
  
-This mods adds a single item the Home Altar which is a placeable Demon Altar purchasable from the Materials Vendor
- 
+This mods adds 3 items:
+Home Altar which is a placeable Demon Altar purchasable from the Materials Vendor
+Time Potion is a potion that either makes it day or night depending on whether it currently is day or night, it also moves the moon-cycle forward.
+Horde Potion is a potion that increases spawn rate greatly, and if another one is used while the first is active, increases spawn rate even further.
+
 Mod support:
 Calamity Mod
