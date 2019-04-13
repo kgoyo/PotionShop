@@ -398,7 +398,7 @@ namespace PotionShop.NPCs
                     shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 30);
                     nextSlot++;
 
-                    if (NPC.downedBoss3)
+                    if (NPC.downedBoss2)
                     {
                         shop.item[nextSlot].SetDefaults(mod.ItemType("CelestialStick"));
                         nextSlot++;

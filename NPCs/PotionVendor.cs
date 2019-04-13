@@ -17,6 +17,7 @@ namespace PotionShop.NPCs
         private const int CONSUMESHOP = 1;
         private const int FLASKSHOP = 2;
         private const int CALAMITYSHOP = 3;
+		private const int MODSHOP = 4;
 
         private static int shopIndex = 0;
 
@@ -83,6 +84,9 @@ namespace PotionShop.NPCs
                 potionVendorShop.Add(CALAMITYSHOP);
                 shopNames.Add("Buy Calamity potions");
             }
+			
+			potionVendorShop.Add(MODSHOP);
+			shopNames.Add("Buy modded buffs");
             
             ShopHelper.PadShopNames(shopNames);
 
@@ -277,12 +281,6 @@ namespace PotionShop.NPCs
                         nextSlot++;
                     }
 
-                    if (NPC.downedBoss3)
-                    {
-                        shop.item[nextSlot].SetDefaults(mod.ItemType("HordePotion"));
-                        nextSlot++;
-                    }
-
                     //post queen bee, jungle items
                     if (NPC.downedQueenBee)
                     {
@@ -472,7 +470,13 @@ namespace PotionShop.NPCs
                         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 20);
                         nextSlot++;
                     }
-
+					break;
+				case MODSHOP:
+					if (NPC.downedBoss3)
+                    {
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("HordePotion"));
+                        nextSlot++;
+                    }
                     break;
                 default:
                     //no default shop
