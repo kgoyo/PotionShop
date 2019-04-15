@@ -19,6 +19,13 @@ namespace PotionShop.NPCs
                 }
                 maxSpawns *= 5;
             }
+
+            if (player.GetModPlayer<PotionShopPlayer>(this.mod).Peace)
+            {
+                spawnRate = (int)(spawnRate * 50.0);
+                maxSpawns *= (int)(1.0/100);
+            }
+               
         }
     }
 }

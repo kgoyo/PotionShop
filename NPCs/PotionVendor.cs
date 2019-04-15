@@ -476,6 +476,8 @@ namespace PotionShop.NPCs
                     {
                         shop.item[nextSlot].SetDefaults(mod.ItemType("HordePotion"));
                         nextSlot++;
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("PeacePotion"));
+                        nextSlot++;
                     }
                     break;
                 default:
