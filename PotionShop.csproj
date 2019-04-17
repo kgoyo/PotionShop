@@ -33,14 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Buffs\HordeBuff.cs" />
+    <Compile Include="Buffs\PeaceBuff.cs" />
     <Compile Include="CalamityHelper.cs" />
+    <Compile Include="Items\CelestialStick.cs" />
+    <Compile Include="Items\HomeAltar.cs" />
+    <Compile Include="Items\HordePotion.cs" />
+    <Compile Include="Items\PeacePotion.cs" />
     <Compile Include="NPCs\AccessoryVendor.cs" />
     <Compile Include="NPCs\MaterialsVendor.cs" />
+    <Compile Include="NPCs\PotionShopGlobalNPC.cs" />
     <Compile Include="NPCs\PotionVendor.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="PotionShop.cs" />
+    <Compile Include="PotionShopPlayer.cs" />
     <Compile Include="ShopHelper.cs" />
   </ItemGroup>
   <ItemGroup>
